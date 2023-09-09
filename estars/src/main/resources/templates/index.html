@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeLeaf.org">
+
+<head> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch.min.css" />
+<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+
+             <body>
+             <div>
+                 <h2>
+                     Spring Bott Crud System - List of Students
+                 </h2>
+                 <div class ="col-sm-5" align = "center">
+                 <div class ="panel-body" align = "center" >
+                     <table class="table">
+                         <thead class="thead-dark">
+                         <tr>
+                             <th>Student ID</th>
+                             <th>Student Name</th>
+                             <th>Delete</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                         <tr th:each="stu : ${allStudents}">
+                             <td th:text="${stu.id}">Student ID</td>
+                             <td th:text="${stu:studentname}">Student Name</td>
+                             <td>
+                                 <a th: href="@{'/delete/' + ${stu.id}}">Delete</a>
+                             </td>
+                         </tr>
+                         </tbody>
+                     </table>
+             </div>
+                 </div>
+             </div>
+             </body>
+</html>
